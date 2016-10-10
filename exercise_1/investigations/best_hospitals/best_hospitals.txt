@@ -1,3 +1,11 @@
+The following are hospitals which based on the analysis are top 10 in terms of standard of care.
+
+Methodology:
+1. Emergency Rooms  were excluded from the analysis since the analysis is to be performed per procedure
+2. Surgical reporting metrics were excluded from the analysis
+3. For most of the metrics, the scaling was consistent (0-100). There were two metrics (OP_3b and OP_5) which described median time to transfer a patient. These metrics were excluded
+4. The methodology used the average score across procedures at the various hospitals
+
 WICHITA VA MEDICAL CENTER	100.0
 ALLEGHANY COUNTY MEMORIAL HOSPITAL	100.0
 PIKE COUNTY MEMORIAL HOSPITAL	100.0

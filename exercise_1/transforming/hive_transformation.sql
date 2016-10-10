@@ -5,8 +5,9 @@ FROM measures_raw;
 
 DROP TABLE procedures;
 CREATE TABLE procedures AS
-SELECT ProviderID,Condition, MeasureID, Score
-FROM effective_care_raw;
+SELECT ProviderID,Condition, MeasureID, CAST(Score as bigint) AS Score
+FROM effective_care_raw
+WHERE Condition not in ('Emergency Department','Surgical Care Improvement Project') and MeasureId not in ('OP_3b','OP_5');
 
 DROP TABLE hospitals;
 CREATE TABLE hospitals AS
@@ -15,11 +16,5 @@ FROM hospitals_raw;
 
 DROP TABLE surveys_responses;
 CREATE TABLE surveys_responses AS
-SELECT ProviderID, HCAHPSBaseScore, HCAHPSConsistencyScore
+SELECT ProviderNumber, HCAHPSBaseScore, HCAHPSConsistencyScore,HCAHPSBaseScore+ HCAHPSConsistencyScore as TotalScore
 FROM surveys_responses_raw;
-
-ALTER TABLE surveys_responses
-ADD COLUMN TotalScore bigint;
-
-UPDATE surveys_responses
-SET TotalScore = HCAHPSBaseScore+HCAHPSConsistencyScore;

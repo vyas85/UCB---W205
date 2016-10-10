@@ -1,3 +1,8 @@
+Methodology:
+1. The analysis displays the top 10 states based on the average scores across procedures and metrics 
+2. Emergency room and Surgical Care improvement project were excluded since they didn’t relate to procedures
+3. OP_3b and OP_5 measures were not scaled on a 0-100 scale and were removed
+
 ME	91.6815144766147
 VA	90.97976501305483
 NH	90.65970149253731

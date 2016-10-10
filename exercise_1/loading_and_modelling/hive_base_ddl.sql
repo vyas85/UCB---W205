@@ -55,7 +55,7 @@ PhoneNumber string,
 Condition string,
 MeasureID string,
 MeasureName string,
-Score string,
+Score bigint,
 Sample string,
 Footnote string,
 MeasureStartDate date,
@@ -115,3 +115,34 @@ WITH SERDEPROPERTIES (
 )
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare/surveys_responses_raw';
+
+DROP TABLE readmissions_raw;
+CREATE EXTERNAL TABLE readmissions_raw
+(
+ProviderID bigint,
+HospitalName string,
+Address string,
+City string,
+State string,
+ZIPCode string,
+CountyName string,
+PhoneNumber string,
+MeasureName string,
+MeasureID string,
+ComparedtoNational string,
+Denominator string,
+Score bigint,
+LowerEstimate bigint,
+HigherEstimate bigint,
+Footnote string,
+MeasureStartDate date,
+MeasureEndDate date
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+ "separatorChar" = ",",
+ "quoteChar" = '"',
+ "escapeChar" = '\n'
+)
+STORED AS TEXTFILE
+LOCATION '/user/w205/hospital_compare/readmissions_raw';
