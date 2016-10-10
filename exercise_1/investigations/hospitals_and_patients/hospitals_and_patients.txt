@@ -1,0 +1,7 @@
+The Correlation between hospital quality and survey responses is 0.027.
+
+This shows a very small correlation between hospital quality and positive survey responses.
+
+The correlation between hospital variability and survey responses is
+-0.21. This correlation is fairly large. This shows that the higher the variability, the worse
+the responses are.

@@ -1,0 +1,8 @@
+Blood Clot Prevention and Treatment	226.12657690219777
+Preventive Care	132.86112466866265
+Heart Failure	103.88366912040729
+Pneumonia	87.41747964965325
+Pregnancy and Delivery Care	46.617023851381525
+Stroke Care	46.47119605423026
+Heart Attack or Chest Pain	37.56126350417822
+Children's Asthma	18.93891191648657
